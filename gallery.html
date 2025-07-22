@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery & Clients - ADO Security</title>
   <link rel="icon" href="images/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .mobile-menu { display: none; }
+    @media (max-width: 767px) {
+      .mobile-menu { display: block; }
+      .desktop-menu { display: none; }
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
 
   <!-- Navbar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
-   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-  <div class="flex items-center space-x-3">
-    <img src="images/ADO_Logo.png" alt="ADO Logo" class="h-10 w-10 object-contain" />
-    <h1 class="text-3xl font-bold text-blue-700">ADO SECURITY & PROTECTION SERVICES</h1>
-  </div>
-      <nav>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
+        <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
+          ADO SECURITY &<br class="block sm:hidden" /> PROTECTION SERVICES
+        </span>
+      </div>
+      <!-- Desktop Nav -->
+      <nav class="desktop-menu">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
           <li><a href="about.html" class="hover:text-blue-700">About</a></li>
@@ -29,57 +38,75 @@
           <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
         </ul>
       </nav>
+      <!-- Hamburger for mobile -->
+      <button id="menu-btn" class="mobile-menu relative z-50 block md:hidden focus:outline-none" aria-label="Toggle navigation">
+        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <!-- Mobile Nav Dropdown -->
+      <nav id="mobile-nav" class="mobile-menu absolute right-4 top-20 bg-white shadow-lg rounded-lg w-44 py-2 transition-all duration-200 ease-in-out scale-0 opacity-0 pointer-events-none">
+        <ul class="flex flex-col space-y-1 text-base">
+          <li><a href="index.html" class="block px-4 py-2 hover:text-blue-700">Home</a></li>
+          <li><a href="about.html" class="block px-4 py-2 hover:text-blue-700">About</a></li>
+          <li><a href="services.html" class="block px-4 py-2 hover:text-blue-700">Services</a></li>
+          <li><a href="gallery.html" class="block px-4 py-2 text-blue-700 font-semibold">Gallery & Clients</a></li>
+          <li><a href="contact.html" class="block px-4 py-2 hover:text-blue-700">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-<main class="flex-grow">
-  <!-- Gallery Slider -->
-  <section class="py-12 bg-white">
-    <div class="max-w-5xl mx-auto text-center mb-10">
-      <h2 class="text-3xl font-bold text-blue-700 mb-4">Our Work in Action</h2>
-    </div>
-    <div class="swiper mySwiper max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="images/ado-guard-enhanced.png" alt="Security Event 1" class="w-full h-96 object-cover" />
-    </div>
-    <div class="swiper-slide">
-      <img src="images/security2.png" alt="Security Event 2" class="w-full h-96 object-cover" />
-    </div>
-  </div>
-  <div class="swiper-pagination"></div>
-  <div class="swiper-button-next text-blue-700"></div>
-  <div class="swiper-button-prev text-blue-700"></div>
-</div>
-  </section>
 
-  <!-- Testimonials -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-blue-700 mb-10">Client Testimonials</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p>“We hired ADO for our society and couldn't be happier with their professionalism.”</p>
-          <div class="mt-4 text-blue-700 font-medium">– Mr. Sharma</div>
+  <main class="flex-grow">
+    <!-- Gallery Slider -->
+    <section class="py-12 bg-white">
+      <div class="max-w-5xl mx-auto text-center mb-10 px-4">
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">Our Work in Action</h2>
+      </div>
+      <div class="swiper mySwiper max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/Img7.jpeg" alt="Security Guard Providing Protection Service" class="w-full h-64 sm:h-96 object-cover" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/img8.jpeg" alt="Night Patrol Security Team" class="w-full h-64 sm:h-96 object-cover" />
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p>“Top-notch event security. The bouncers were well-managed and calm throughout.”</p>
-          <div class="mt-4 text-blue-700 font-medium">– Priya Mehta</div>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p>“Reliable and quick to respond. I recommend ADO for corporate security.”</p>
-          <div class="mt-4 text-blue-700 font-medium">– Rajesh Desai</div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next text-blue-700"></div>
+        <div class="swiper-button-prev text-blue-700"></div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 sm:py-16 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-blue-700 mb-8">Client Testimonials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <article class="bg-white p-6 rounded-lg shadow">
+            <p class="text-gray-800">“We hired ADO for our society and couldn't be happier with their professionalism.”</p>
+            <footer class="mt-4 text-blue-700 font-medium">– Mr. Sharma</footer>
+          </article>
+          <article class="bg-white p-6 rounded-lg shadow">
+            <p class="text-gray-800">“Top-notch event security. The bouncers were well-managed and calm throughout.”</p>
+            <footer class="mt-4 text-blue-700 font-medium">– Priya Mehta</footer>
+          </article>
+          <article class="bg-white p-6 rounded-lg shadow">
+            <p class="text-gray-800">“Reliable and quick to respond. I recommend ADO for corporate security.”</p>
+            <footer class="mt-4 text-blue-700 font-medium">– Rajesh Desai</footer>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+
   <!-- Client Logos -->
   <section class="py-12 bg-white">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h2 class="text-2xl font-bold text-blue-700 mb-6">Our Trusted Clients</h2>
       <div class="flex flex-wrap justify-center gap-10 items-center">
-        <img src="images/client1.png" class="h-12" alt="Client 1" />
-        <img src="images/client2.png" class="h-12" alt="Client 2" />
+        <img src="images/client1.png" class="h-12" alt="Client 1 Logo" />
+        <img src="images/client2.png" class="h-12" alt="Client 2 Logo" />
       </div>
     </div>
   </section>
@@ -92,6 +119,24 @@
       pagination: { el: ".swiper-pagination", clickable: true },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     });
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        if (mobileNav.classList.contains('scale-0')) {
+          mobileNav.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.add('scale-100', 'opacity-100');
+        } else {
+          mobileNav.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.remove('scale-100', 'opacity-100');
+        }
+      });
+      document.querySelectorAll('#mobile-nav a').forEach(link =>
+        link.addEventListener('click', () => menuBtn.click())
+      );
+    }
   </script>
 
   <!-- Footer -->
