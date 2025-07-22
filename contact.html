@@ -4,20 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - ADO Security</title>
-
-  <!-- Tailwind CSS -->
+  <link rel="icon" href="images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .mobile-menu { display: none; }
+    @media (max-width: 767px) {
+      .mobile-menu { display: block; }
+      .desktop-menu { display: none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
 
   <!-- Navbar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
-   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-  <div class="flex items-center space-x-3">
-    <img src="images/ADO_Logo.png" alt="ADO Logo" class="h-10 w-10 object-contain" />
-    <h1 class="text-3xl font-bold text-blue-700">ADO SECURITY & PROTECTION SERVICES</h1>
-  </div>
-      <nav>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
+        <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
+          ADO SECURITY &<br class="block sm:hidden"/> PROTECTION SERVICES
+        </span>
+      </div>
+      <!-- Desktop Nav -->
+      <nav class="desktop-menu">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
           <li><a href="about.html" class="hover:text-blue-700">About</a></li>
@@ -26,48 +37,68 @@
           <li><a href="contact.html" class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-1">Contact</a></li>
         </ul>
       </nav>
+      <!-- Hamburger for mobile -->
+      <button id="menu-btn" class="mobile-menu relative z-50 block md:hidden focus:outline-none" aria-label="Toggle navigation">
+        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Mobile Nav Dropdown -->
+      <nav id="mobile-nav" class="mobile-menu absolute right-4 top-20 bg-white shadow-lg rounded-lg w-44 py-2 transition-all duration-200 ease-in-out scale-0 opacity-0 pointer-events-none">
+        <ul class="flex flex-col space-y-1 text-base">
+          <li><a href="index.html" class="block px-4 py-2 hover:text-blue-700">Home</a></li>
+          <li><a href="about.html" class="block px-4 py-2 hover:text-blue-700">About</a></li>
+          <li><a href="services.html" class="block px-4 py-2 hover:text-blue-700">Services</a></li>
+          <li><a href="gallery.html" class="block px-4 py-2 hover:text-blue-700">Gallery & Clients</a></li>
+          <li><a href="contact.html" class="block px-4 py-2 text-blue-700 font-semibold">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-<main class="flex-grow">
-  <!-- Contact Section -->
-  <section class="py-16 px-4 md:px-8 lg:px-16 bg-white shadow-sm">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-center text-blue-700 mb-4">Contact Us</h2>
-      <p class="text-center text-lg text-gray-600 mb-10">
-        Need reliable security services or have any queries? Reach out to us below.
-      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- Contact Form -->
-        <form action="https://formsubmit.co/shubhamupadhyay3007@gmail.com" method="POST" class="space-y-4 bg-gray-50 p-6 rounded-lg shadow-md">
-          <input type="text" name="name" placeholder="Your Name" required class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="text" name="name" placeholder="Contact No" required class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="email" name="email" placeholder="Your Email" required class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <textarea name="message" rows="5" placeholder="Your Message" required class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          <button type="submit" class="bg-blue-600 text-white font-semibold px-6 py-2 rounded hover:bg-blue-700 transition">Send Message</button>
-        </form>
+  <main class="flex-grow">
+    <!-- Contact Section -->
+    <section class="py-16 px-4 md:px-8 lg:px-16 bg-white shadow-sm">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-blue-700 mb-4">Contact Us</h2>
+        <p class="text-center text-lg text-gray-600 mb-10">
+          Need reliable security services or have any queries? Reach out to us below.
+        </p>
 
-        <!-- Contact Info -->
-        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-          <h3 class="text-2xl font-semibold text-blue-700 mb-4">Reach Us At</h3>
-          <p class="mb-2"><strong>Phone:</strong> +91 9870094544/+91 9870051342</p>
-          <p class="mb-2"><strong>Email:</strong> adosecurityservices@example.com</p>
-          <p class="mb-4"><strong>Office:</strong> Mumbai, Maharashtra, India</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Contact Form -->
+          <form action="https://formsubmit.co/shubhamupadhyay3007@gmail.com" method="POST" class="space-y-4 bg-gray-50 p-6 rounded-lg shadow-md">
+            <input type="text" name="name" placeholder="Your Name" required autocomplete="name" class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="tel" name="phone" placeholder="Contact No" required autocomplete="tel" class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="email" name="email" placeholder="Your Email" required autocomplete="email" class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <textarea name="message" rows="5" placeholder="Your Message" required class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <button type="submit" class="bg-blue-600 text-white font-semibold w-full sm:w-auto px-6 py-2 rounded hover:bg-blue-700 transition">Send Message</button>
+          </form>
 
-          <!-- Google Map -->
-          <div class="w-full h-64 rounded overflow-hidden shadow">
-            <iframe 
-              src="https://maps.google.com/maps?q=mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-              class="w-full h-full border-0" 
-              allowfullscreen="" 
-              loading="lazy">
-            </iframe>
+          <!-- Contact Info -->
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold text-blue-700 mb-4">Reach Us At</h3>
+            <p class="mb-2"><strong>Phone:</strong> +91 9870094544 / +91 9870051342</p>
+            <p class="mb-2"><strong>Email:</strong> adosecurityservices@example.com</p>
+            <p class="mb-4"><strong>Office:</strong> Mumbai, Maharashtra, India</p>
+
+            <!-- Google Map -->
+            <div class="w-full h-64 rounded overflow-hidden shadow">
+              <iframe 
+                src="https://maps.google.com/maps?q=mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                class="w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="ADO Security Office Location">
+              </iframe>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+
   <!-- Footer -->
   <footer class="bg-blue-700 text-white py-6">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
@@ -77,5 +108,27 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        if (mobileNav.classList.contains('scale-0')) {
+          mobileNav.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.add('scale-100', 'opacity-100');
+        } else {
+          mobileNav.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.remove('scale-100', 'opacity-100');
+        }
+      });
+      // Close mobile nav on link click
+      document.querySelectorAll('#mobile-nav a').forEach(link =>
+        link.addEventListener('click', () => menuBtn.click())
+      );
+    }
+  </script>
+
 </body>
 </html>
