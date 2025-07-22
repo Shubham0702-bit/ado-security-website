@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADO Security & Protection Services</title>
+  <meta name="description" content="Trusted security agency in Mumbai for residential, commercial, and event services.">
+  <link rel="icon" href="images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body { font-family: 'Poppins', sans-serif; }</style>
+</head>
+<body class="flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+  <div class="flex items-center space-x-3">
+    <img src="images/ADO_Logo.png" alt="ADO Logo" class="h-10 w-10 object-contain" />
+    <h1 class="text-3xl font-bold text-blue-700">ADO SECURITY & PROTECTION SERVICES</h1>
+  </div>
+  <nav>
+    <ul class="flex space-x-6">
+      <li><a href="index.html" class="text-blue-700 border-b-2 border-blue-700 pb-1 font-semibold">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-700">About</a></li>
+      <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
+      <li><a href="gallery.html" class="hover:text-blue-700">Gallery & Clients</a></li>
+      <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+  </header>
+ <main class="flex-grow">
+<!-- Hero Section -->
+<section class="bg-white py-10 md:py-16">
+  <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+    
+    <!-- Left Text Content -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-gray-900">
+        Your Safety, Our Priority
+      </h1>
+      <p class="text-lg text-gray-700 mb-6">
+        Trusted Security for Homes, Corporates & Events
+      </p>
+      <a href="contact.html"
+         class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg rounded shadow-lg transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+
+    <!-- Right Side Swiper Slideshow -->
+<div class="md:w-1/2 w-full">
+  <div class="swiper w-full h-[650px] rounded-xl shadow-xl overflow-hidden">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/Img1.jpeg" alt="Security Guard" class="w-full h-full object-cover" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/img2.jpeg" alt="Event Security" class="w-full h-full object-cover" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/img5.jpeg" alt="Building Guard" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+</section>
+
+<!-- SwiperJS Script (at bottom of body or before </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+  });
+</script>
+</main>
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center py-4">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+      <div>&copy; 2025 ADO Security & Protection Services</div>
+      <div class="mt-2 md:mt-0">
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
