@@ -7,87 +7,128 @@
   <meta name="description" content="Trusted security agency in Mumbai for residential, commercial, and event services.">
   <link rel="icon" href="images/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    /* Fix bold text in nav on mobile */
+    .mobile-menu { display: none; }
+    @media (max-width: 767px) {
+      .mobile-menu { display: block; }
+      .desktop-menu { display: none; }
+    }
+  </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen bg-white">
   <!-- Navbar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
-   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-  <div class="flex items-center space-x-3">
-    <img src="images/ADO_Logo.png" alt="ADO Logo" class="h-10 w-10 object-contain" />
-    <h1 class="text-3xl font-bold text-blue-700">ADO SECURITY & PROTECTION SERVICES</h1>
-  </div>
-  <nav>
-    <ul class="flex space-x-6">
-      <li><a href="index.html" class="text-blue-700 border-b-2 border-blue-700 pb-1 font-semibold">Home</a></li>
-      <li><a href="about.html" class="hover:text-blue-700">About</a></li>
-      <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
-      <li><a href="gallery.html" class="hover:text-blue-700">Gallery & Clients</a></li>
-      <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
-    </ul>
-  </nav>
-</div>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
+        <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">ADO SECURITY &<br class="block sm:hidden"/> PROTECTION SERVICES</span>
+      </div>
+      <!-- Desktop Nav -->
+      <nav class="desktop-menu">
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="text-blue-700 border-b-2 border-blue-700 pb-1 font-semibold">Home</a></li>
+          <li><a href="about.html" class="hover:text-blue-700">About</a></li>
+          <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
+          <li><a href="gallery.html" class="hover:text-blue-700">Gallery & Clients</a></li>
+          <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="mobile-menu relative z-50 block md:hidden focus:outline-none" aria-label="Toggle navigation">
+        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Mobile Nav -->
+      <nav id="mobile-nav" class="mobile-menu absolute right-4 top-20 bg-white shadow-lg rounded-lg w-44 py-2 transition-all duration-200 ease-in-out scale-0 opacity-0 pointer-events-none">
+        <ul class="flex flex-col space-y-1 text-base">
+          <li><a href="index.html" class="block px-4 py-2 text-blue-700 font-semibold">Home</a></li>
+          <li><a href="about.html" class="block px-4 py-2 hover:text-blue-700">About</a></li>
+          <li><a href="services.html" class="block px-4 py-2 hover:text-blue-700">Services</a></li>
+          <li><a href="gallery.html" class="block px-4 py-2 hover:text-blue-700">Gallery & Clients</a></li>
+          <li><a href="contact.html" class="block px-4 py-2 hover:text-blue-700">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
- <main class="flex-grow">
-<!-- Hero Section -->
-<section class="bg-white py-10 md:py-16">
-  <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
-    
-    <!-- Left Text Content -->
-    <div class="md:w-1/2 text-center md:text-left">
-      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-gray-900">
-        Your Safety, Our Priority
-      </h1>
-      <p class="text-lg text-gray-700 mb-6">
-        Trusted Security for Homes, Corporates & Events
-      </p>
-      <a href="contact.html"
-         class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg rounded shadow-lg transition-all duration-300">
-        Contact Us
-      </a>
-    </div>
 
-    <!-- Right Side Swiper Slideshow -->
-<div class="md:w-1/2 w-full">
-  <div class="swiper w-full h-[650px] rounded-xl shadow-xl overflow-hidden">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="images/Img1.jpeg" alt="Security Guard" class="w-full h-full object-cover" />
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-white py-8 md:py-16">
+      <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+        <!-- Text Content -->
+        <div class="md:w-1/2 text-center md:text-left mt-6 md:mt-0">
+          <h1 class="text-2xl xs:text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-gray-900">
+            Your Safety, Our Priority
+          </h1>
+          <p class="text-base xs:text-lg text-gray-700 mb-6">
+            Trusted Security for Homes, Corporates & Events
+          </p>
+          <a href="contact.html"
+             class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base xs:text-lg rounded shadow-lg transition-all duration-300 block md:inline-block mx-auto md:mx-0 w-fit">
+            Contact Us
+          </a>
+        </div>
+        <!-- Swiper Slideshow -->
+        <div class="md:w-1/2 w-full">
+          <div class="swiper w-full h-52 xs:h-80 sm:h-96 md:h-[650px] rounded-xl shadow-xl overflow-hidden">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/Img1.jpeg" alt="ADO Security Guard on duty" class="w-full h-full object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/img2.jpeg" alt="Event Security Team" class="w-full h-full object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/img5.jpeg" alt="Building Guard at work" class="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <img src="images/img2.jpeg" alt="Event Security" class="w-full h-full object-cover" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/img5.jpeg" alt="Building Guard" class="w-full h-full object-cover" />
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</div>
-</section>
+    </section>
+    <!-- SwiperJS Script (recommended at end of body) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Swiper
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+      });
 
-<!-- SwiperJS Script (at bottom of body or before </body>) -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-  });
-</script>
-</main>
+      // Responsive mobile nav
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      menuBtn.addEventListener('click', () => {
+        if (mobileNav.classList.contains('scale-0')) {
+          mobileNav.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.add('scale-100', 'opacity-100');
+        } else {
+          mobileNav.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.remove('scale-100', 'opacity-100');
+        }
+      });
+      // Optional: Close nav when link is clicked (improves UX)
+      document.querySelectorAll('#mobile-nav a').forEach(link =>
+        link.addEventListener('click', () => menuBtn.click())
+      );
+    </script>
+  </main>
+
   <!-- Footer -->
   <footer class="bg-blue-600 text-white text-center py-4">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
       <div>&copy; 2025 ADO Security & Protection Services</div>
       <div class="mt-2 md:mt-0">
         <a href="contact.html" class="hover:underline">Contact</a>
