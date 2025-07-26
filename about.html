@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - ADO Security & Protection Services</title>
+  <meta name="description" content="Trusted security agency in Mumbai since 1985. Read about our story, values, and achievements.">
   <link rel="icon" href="images/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,9 +15,36 @@
       .mobile-menu { display: block; }
       .desktop-menu { display: none; }
     }
+    /* Timeline */
+    .timeline:before { 
+      content:""; 
+      position: absolute;
+      left: 50%; 
+      top: 0; 
+      bottom: 0; 
+      width: 3px; 
+      background: #2563eb; 
+      z-index: 0;
+      transform: translateX(-50%);
+    }
+    .timeline-item { position:relative; z-index:1;}
+    .timeline-dot {
+      width: 2.2rem; height: 2.2rem;
+      background: linear-gradient(135deg,#2563eb,#38bdf8); 
+      border-radius: 9999px; 
+      display: flex; align-items: center; justify-content: center; 
+      color: #fff; font-weight: bold; font-size: 1.1rem; 
+      border: 3px solid #fff; 
+      box-shadow: 0 1px 10px 0 rgba(37,99,235,0.10);
+      margin: 0 auto;
+    }
+    .counter-anim { animation: countUp 1.1s cubic-bezier(.4,0,.2,1);}
+    @keyframes countUp { from{opacity:0; transform:scale(.7);} to{opacity:1; transform:scale(1);}}
+    .section-fade { animation: fadeIn 1s cubic-bezier(.4,0,.2,1);}
+    @keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
   <!-- Navbar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -26,101 +54,103 @@
           ADO SECURITY &<br class="block sm:hidden"/> PROTECTION SERVICES
         </span>
       </div>
-      <!-- Desktop Nav -->
       <nav class="desktop-menu">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
-          <li><a href="about.html" class="text-blue-700 border-b-2 border-blue-700 pb-1 font-semibold">About</a></li>
-          <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
+          <li><a href="about.html" class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-1">About</a></li>
           <li><a href="gallery.html" class="hover:text-blue-700">Gallery & Clients</a></li>
           <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
         </ul>
       </nav>
-      <!-- Hamburger for mobile -->
       <button id="menu-btn" class="mobile-menu relative z-50 block md:hidden focus:outline-none" aria-label="Toggle navigation">
         <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <!-- Mobile Nav Dropdown -->
       <nav id="mobile-nav" class="mobile-menu absolute right-4 top-20 bg-white shadow-lg rounded-lg w-44 py-2 transition-all duration-200 ease-in-out scale-0 opacity-0 pointer-events-none">
         <ul class="flex flex-col space-y-1 text-base">
           <li><a href="index.html" class="block px-4 py-2 hover:text-blue-700">Home</a></li>
           <li><a href="about.html" class="block px-4 py-2 text-blue-700 font-semibold">About</a></li>
-          <li><a href="services.html" class="block px-4 py-2 hover:text-blue-700">Services</a></li>
           <li><a href="gallery.html" class="block px-4 py-2 hover:text-blue-700">Gallery & Clients</a></li>
           <li><a href="contact.html" class="block px-4 py-2 hover:text-blue-700">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="flex-grow">
-    <!-- About Section -->
-    <section class="py-10 px-4 sm:px-6 md:px-8 lg:px-16">
-      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6 sm:p-10">
-        <h2 class="text-2xl xs:text-3xl md:text-4xl font-bold text-center text-blue-700 mb-8">
-          About ADO Security & Protection Services
-        </h2>
-        <p class="text-base sm:text-lg leading-relaxed mb-5">
-          Established in 1985 in Mumbai, <strong class="font-semibold text-blue-700">ADO Security & Protection Services</strong> has grown to become one of the region’s most trusted and professional security agencies.
-        </p>
-        <p class="text-base sm:text-lg leading-relaxed mb-5">
-          With decades of experience, we proudly provide end-to-end security solutions across residential complexes, industrial premises, factories, showrooms, and corporate spaces—not just in Mumbai, but also across Gujarat and other states.
-        </p>
-        <p class="text-base sm:text-lg leading-relaxed mb-5">
-          At ADO, we believe that security is not just about presence—it's about preparedness. Every member of our security staff is rigorously trained, verified, and disciplined to handle real-world challenges with professionalism and confidence.
-        </p>
-        <p class="text-base sm:text-lg leading-relaxed mb-5">
-          Our commitment to trust, reliability, and quick response has earned us the confidence of clients from all sectors—residential societies, industrial hubs, and even event organizers.
-        </p>
-        <p class="text-base sm:text-lg leading-relaxed mb-8">
-          Our mission is to deliver peace of mind through our professional team of watchmen, bouncers, and patrolling officers.
-        </p>
 
-        <h3 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-4 mt-2">Why Choose Us?</h3>
-        <ul class="space-y-3 text-base sm:text-lg pl-4 text-gray-700">
-          <li class="flex items-start">
-            <span class="text-blue-700 mr-2 mt-0.5">&#10003;</span>
-            <span><span class="font-medium">Experienced & Licensed Security Staff</span></span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-700 mr-2 mt-0.5">&#10003;</span>
-            <span><span class="font-medium">24x7 Availability for Events & Emergencies</span></span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-700 mr-2 mt-0.5">&#10003;</span>
-            <span><span class="font-medium">Affordable, Transparent Pricing</span></span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-700 mr-2 mt-0.5">&#10003;</span>
-            <span><span class="font-medium">Trusted by Residential Societies, Corporates & Celebrities</span></span>
-          </li>
+  <main class="flex-grow">
+    <!-- About Hero Section -->
+    <section class="bg-white py-14 section-fade shadow relative">
+      <div class="max-w-5xl mx-auto text-center px-4">
+        <h2 class="text-4xl font-extrabold text-blue-900 mb-4">Our Story</h2>
+        <p class="text-xl text-gray-700 mb-8">Protecting Mumbai since 1985, combining vigilance & trust for your peace of mind.</p>
+      </div>
+      <!-- Timeline -->
+      <div class="max-w-3xl mx-auto px-4 pt-5 pb-10 relative timeline">
+        <!-- Timeline Items -->
+        <div class="timeline-item flex items-center mb-8">
+          <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg">Founded as a local security agency</span></div>
+          <div class="timeline-dot mx-auto">1985</div>
+          <div class="w-1/2 pl-6 sm:hidden text-base font-medium">Founded as a local security agency</div>
+        </div>
+        <div class="timeline-item flex items-center mb-8">
+          <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg">Expanded to industrial & event protection</span></div>
+          <div class="timeline-dot mx-auto">1995</div>
+          <div class="w-1/2 pl-6 sm:hidden text-base font-medium">Expanded to industrial & event protection</div>
+        </div>
+        <div class="timeline-item flex items-center mb-8">
+          <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg">Launched city-wide night patrolling</span></div>
+          <div class="timeline-dot mx-auto">2005</div>
+          <div class="w-1/2 pl-6 sm:hidden text-base font-medium">Launched city-wide night patrolling</div>
+        </div>
+        <div class="timeline-item flex items-center">
+          <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg font-bold text-blue-700">Now: 300+ clients & 200+ trained professionals</span></div>
+          <div class="timeline-dot mx-auto">2025</div>
+          <div class="w-1/2 pl-6 sm:hidden text-base font-bold text-blue-700">Now: 300+ clients & 200+ pros</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animated Counters -->
+    <section class="py-10 bg-blue-50">
+      <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-around text-center gap-6">
+        <div>
+          <div class="text-blue-700 text-3xl sm:text-5xl font-extrabold counter-anim" id="counterClients">0</div>
+          <div class="text-gray-700 text-lg font-semibold mt-2">Clients Secured</div>
+        </div>
+        <div>
+          <div class="text-blue-700 text-3xl sm:text-5xl font-extrabold counter-anim" id="counterProfessionals">0</div>
+          <div class="text-gray-700 text-lg font-semibold mt-2">Security Professionals</div>
+        </div>
+        <div>
+          <div class="text-blue-700 text-3xl sm:text-5xl font-extrabold counter-anim" id="counterAvailable">0</div>
+          <div class="text-gray-700 text-lg font-semibold mt-2">Available 24x7</div>
+        </div>
+      </div>
+    </section>
+    <!-- About Values -->
+    <section class="py-12 bg-white">
+      <div class="max-w-xl mx-auto text-center px-3">
+        <h3 class="text-2xl font-bold text-blue-700 mb-3">Why Choose ADO?</h3>
+        <ul class="text-base sm:text-lg text-gray-700 space-y-3 mt-5 text-left mx-auto max-w-md">
+          <li>✔️ Experienced, licensed security staff</li>
+          <li>✔️ 24x7 availability for events & emergencies</li>
+          <li>✔️ Affordable, transparent pricing</li>
+          <li>✔️ Trusted by societies, corporates, and celebrities</li>
+          <li>✔️ Always professional, alert & reliable</li>
         </ul>
       </div>
     </section>
-    <!-- Mobile Nav Script -->
-    <script>
-      // Mobile nav handling
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileNav = document.getElementById('mobile-nav');
-      if(menuBtn && mobileNav){
-        menuBtn.addEventListener('click', () => {
-          if (mobileNav.classList.contains('scale-0')) {
-            mobileNav.classList.remove('scale-0','opacity-0','pointer-events-none');
-            mobileNav.classList.add('scale-100','opacity-100');
-          } else {
-            mobileNav.classList.add('scale-0','opacity-0','pointer-events-none');
-            mobileNav.classList.remove('scale-100','opacity-100');
-          }
-        });
-        document.querySelectorAll('#mobile-nav a').forEach(link =>
-          link.addEventListener('click', () => menuBtn.click())
-        );
-      }
-    </script>
+    <!-- CTA Section -->
+    <section class="text-center py-12 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+      <h2 class="text-2xl md:text-3xl mb-4 font-bold">Ready to Experience True Peace of Mind?</h2>
+      <p class="mb-6 text-lg">Our team is here to help. Contact us now for a custom security solution.</p>
+      <a href="contact.html" class="bg-white text-blue-700 px-8 py-3 rounded font-bold shadow inline-block hover:bg-blue-50 transition">Request a Consultation</a>
+    </section>
   </main>
+
   <!-- Footer -->
-  <footer class="bg-blue-700 text-white py-6 mt-6">
+  <footer class="bg-blue-700 text-white py-6">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
       <div>&copy; 2025 ADO Security & Protection Services</div>
       <div class="mt-2 md:mt-0">
@@ -128,5 +158,44 @@
       </div>
     </div>
   </footer>
+  <!-- Scripts: mobile nav + counter animation -->
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        if (mobileNav.classList.contains('scale-0')) {
+          mobileNav.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.add('scale-100', 'opacity-100');
+        } else {
+          mobileNav.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.remove('scale-100', 'opacity-100');
+        }
+      });
+      document.querySelectorAll('#mobile-nav a').forEach(link =>
+        link.addEventListener('click', () => menuBtn.click())
+      );
+    }
+    // Animated counters
+    function animateValue(id, start, end, duration) {
+      let obj = document.getElementById(id);
+      let range = end - start;
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        let progress = timestamp - startTime;
+        let curr = Math.min(Math.round(start + (range * (progress / duration))), end);
+        obj.textContent = curr + (id !== 'counterAvailable' ? '+' : '');
+        if (curr < end) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    window.addEventListener('DOMContentLoaded',function(){
+      animateValue('counterClients', 0, 300, 1150);
+      animateValue('counterProfessionals', 0, 200, 1200);
+      animateValue('counterAvailable', 0, 24, 800);
+    });
+  </script>
 </body>
 </html>
