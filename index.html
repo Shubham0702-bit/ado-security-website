@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ADO Security & Protection Services</title>
-  <meta name="description" content="Trusted security agency in Mumbai for residential, commercial, and event services.">
+  <meta name="description" content="Trusted security agency in Mumbai for residential, commercial, and event services." />
   <link rel="icon" href="images/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Material+Icons&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Material+Icons&display=swap" 
+    rel="stylesheet" 
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .material-icons { font-family: 'Material Icons', sans-serif; font-size: 2.25rem; }
+    .material-icons { font-family:'Material Icons',sans-serif;font-size:2.25rem;}
     .service-card {
-      transition: transform .2s, box-shadow .2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .service-card:hover {
       transform: translateY(-4px) scale(1.05);
@@ -25,39 +28,53 @@
     .service-card .icon-shadow {
       box-shadow: 0 1px 16px 0 rgba(59, 130, 246, 0.13);
     }
-    .section-fade { animation: fadeIn 1.1s cubic-bezier(.4,0,.2,1); }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity:1; transform:none;} }
+    .section-fade {
+      animation: fadeIn 1.1s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
     .wave {
       position: absolute;
-      left:0; right:0; top:99%;
-      width:100%; height:48px;
-      z-index:2; pointer-events:none;
+      left: 0; right: 0; top: 99%;
+      width: 100%; height: 48px;
+      z-index: 2; pointer-events: none;
+    }
+    .mobile-menu { display: none; }
+    @media (max-width: 767px) {
+      .mobile-menu { display: block; }
+      .desktop-menu { display: none; }
     }
   </style>
 </head>
 <body class="bg-white flex flex-col min-h-screen">
+
   <!-- Navbar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
-        <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
-          ADO SECURITY &<br class="block sm:hidden"/> PROTECTION SERVICES
-        </span>
-      </div>
-      <nav class="desktop-menu hidden md:block">
-        <ul class="flex space-x-6">
+<a href="index.html" class="flex items-center space-x-3">
+  <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
+  <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
+    ADO SECURITY &<br class="block sm:hidden" /> PROTECTION SERVICES
+  </span>
+</a>
+      <!-- Desktop Nav -->
+      <nav class="desktop-menu">
+        <ul class="flex space-x-6 text-base md:text-lg">
           <li><a href="index.html" class="text-blue-700 border-b-2 border-blue-700 pb-1 font-semibold">Home</a></li>
           <li><a href="about.html" class="hover:text-blue-700">About</a></li>
           <li><a href="gallery.html" class="hover:text-blue-700">Gallery & Clients</a></li>
           <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
         </ul>
       </nav>
-      <button id="menu-btn" class="mobile-menu md:hidden block bg-blue-50 rounded p-1" aria-label="Toggle navigation">
-        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="mobile-menu relative z-50 block md:hidden focus:outline-none" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+      <!-- Mobile Nav -->
       <nav id="mobile-nav" class="mobile-menu absolute right-4 top-20 bg-white shadow-lg rounded-lg w-44 py-2 transition-all duration-200 ease-in-out scale-0 opacity-0 pointer-events-none">
         <ul class="flex flex-col space-y-1 text-base">
           <li><a href="index.html" class="block px-4 py-2 text-blue-700 font-semibold">Home</a></li>
@@ -80,7 +97,7 @@
             Your Safety,<br class="hidden md:inline" /> Our Priority
           </h1>
           <p class="text-lg sm:text-xl mb-7 text-gray-700 font-medium">
-            Trusted Security for Homes, Corporates & Events<br class="hidden md:inline"/>
+            Trusted Security for Homes, Corporates & Events<br class="hidden md:inline" />
             Experience the difference since <span class="text-blue-500 font-bold">1985</span>.
           </p>
           <a href="contact.html"
@@ -91,9 +108,15 @@
         <div class="md:w-1/2 w-full">
           <div class="swiper w-full h-56 xs:h-80 sm:h-96 md:h-[420px] rounded-2xl shadow-xl overflow-hidden">
             <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="images/Img1.jpeg" alt="ADO Security Guard on duty" class="w-full h-full object-cover" /></div>
-              <div class="swiper-slide"><img src="images/img2.jpeg" alt="Event Security Team" class="w-full h-full object-cover" /></div>
-              <div class="swiper-slide"><img src="images/img5.jpeg" alt="Building Guard at work" class="w-full h-full object-cover" /></div>
+              <div class="swiper-slide">
+                <img src="images/Img1.jpeg" alt="ADO Security Guard on duty" class="w-full h-full object-cover object-top rounded-2xl" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/img3.jpeg" alt="Event Security Team" class="w-full h-full object-cover object-top rounded-2xl" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images/img7.jpeg" alt="Building Guard at work" class="w-full h-full object-cover object-top rounded-2xl" />
+              </div>
             </div>
             <div class="swiper-pagination"></div>
           </div>
@@ -104,103 +127,104 @@
     </section>
 
     <!-- Services Section -->
-<!-- Services Section (updated) -->
-<section class="py-14 px-2 xs:px-4 sm:px-6 md:px-8 lg:px-16 bg-gray-50 relative z-10 section-fade">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-2xl xs:text-3xl md:text-4xl font-extrabold text-blue-700 mb-2">Our Security Services</h2>
-      <div class="w-16 mx-auto mb-3 h-1 bg-gradient-to-r from-blue-700 to-blue-300 rounded-full"></div>
-      <p class="max-w-xl mx-auto text-gray-600 text-base sm:text-lg">Expert protection for every need—handled with professionalism, discretion, and care.</p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      <!-- Card 1 -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
-          <span class="material-icons text-white text-4xl">verified_user</span>
+    <section class="py-14 px-2 xs:px-4 sm:px-6 md:px-8 lg:px-16 bg-gray-50 relative z-10 section-fade">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl xs:text-3xl md:text-4xl font-extrabold text-blue-700 mb-2">Our Security Services</h2>
+          <div class="w-16 mx-auto mb-3 h-1 bg-gradient-to-r from-blue-700 to-blue-300 rounded-full"></div>
+          <p class="max-w-xl mx-auto text-gray-600 text-base sm:text-lg">Expert protection for every need—handled with professionalism, discretion, and care.</p>
         </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Security Services</h3>
-        <p class="text-sm sm:text-base text-gray-600 mb-2">Trained, alert personnel guard residential and commercial buildings 24/7.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
-          <span class="material-icons text-white text-4xl">event_available</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <!-- Security Services -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
+              <span class="material-icons text-white text-4xl">verified_user</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Security Services</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-2">Trained, alert personnel guard residential and commercial buildings 24/7.</p>
+          </div>
+          <!-- Event Security -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
+              <span class="material-icons text-white text-4xl">event_available</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Event Security</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-2">Reliable bouncers and staff for parties, weddings, corporate, and public events.</p>
+          </div>
+          <!-- Banks Security -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
+              <span class="material-icons text-white text-4xl">account_balance</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Banks Security</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-2">Providing skilled bank guards ensuring the safety and security of banking premises and clients.</p>
+          </div>
+          <!-- Commercial Security -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
+              <span class="material-icons text-white text-4xl">business_center</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Commercial Security</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-2">Smartly dressed, trained staff for office buildings, banks, and IT parks.</p>
+          </div>
+          <!-- Industrial Security -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
+              <span class="material-icons text-white text-4xl">factory</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Industrial Security</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-2">Experienced security personnel trained specifically for industrial complexes and factories.</p>
+          </div>
+          <!-- Night Patrolling -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
+              <span class="material-icons text-white text-4xl">directions_walk</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Night Patrolling</h3>
+            <p class="text-sm sm:text-base text-gray-600 mb-2">Mobile teams for community rounds and after-hours business safety.</p>
+          </div>
+          <!-- Additional Services -->
+          <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center col-span-full max-w-md mx-auto hover:ring-2 hover:ring-blue-200">
+            <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16 mx-auto">
+              <span class="material-icons text-white text-4xl">more_horiz</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Additional Security Services</h3>
+            <p class="text-sm sm:text-base text-gray-600">We provide all kinds of security services beyond those listed, tailored to meet your unique needs.</p>
+          </div>
         </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Event Security</h3>
-        <p class="text-sm sm:text-base text-gray-600 mb-2">Reliable bouncers and staff for parties, weddings, corporate, and public events.</p>
       </div>
-      <!-- Card 3 (Banks Security) -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
-          <span class="material-icons text-white text-4xl">account_balance</span>
-        </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Banks Security</h3>
-        <p class="text-sm sm:text-base text-gray-600 mb-2">Providing skilled bank guards ensuring the safety and security of banking premises and clients.</p>
-      </div>
-      <!-- Card 4 -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
-          <span class="material-icons text-white text-4xl">business_center</span>
-        </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Commercial Security</h3>
-        <p class="text-sm sm:text-base text-gray-600 mb-2">Smartly dressed, trained staff for office buildings, banks, and IT parks.</p>
-      </div>
-      <!-- Card 5 (Industrial Security) -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
-          <span class="material-icons text-white text-4xl">factory</span>
-        </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Industrial Security</h3>
-        <p class="text-sm sm:text-base text-gray-600 mb-2">Experienced security personnel trained specifically for industrial complexes and factories.</p>
-      </div>
-      <!-- Card 6 -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center hover:ring-2 hover:ring-blue-200">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16">
-          <span class="material-icons text-white text-4xl">directions_walk</span>
-        </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Night Patrolling</h3>
-        <p class="text-sm sm:text-base text-gray-600 mb-2">Mobile teams for community rounds and after-hours business safety.</p>
-      </div>
-      <!-- Additional Services -->
-      <div class="service-card bg-white p-7 rounded-2xl shadow-md text-center flex flex-col items-center mt-6 hover:ring-2 hover:ring-blue-200 col-span-full max-w-md mx-auto">
-        <div class="icon-bg icon-shadow flex items-center justify-center mb-5 rounded-full w-16 h-16 mx-auto">
-          <span class="material-icons text-white text-4xl">more_horiz</span>
-        </div>
-        <h3 class="text-lg sm:text-xl font-bold text-blue-600 mb-2">Additional Security Services</h3>
-        <p class="text-sm sm:text-base text-gray-600">We provide all kinds of security services beyond those listed, tailored to meet your unique needs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- SwiperJS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      // Swiper
-      const swiper = new Swiper('.swiper', {
-        loop: true,
-        pagination: { el: '.swiper-pagination' },
-        autoplay: { delay: 3500, disableOnInteraction: false },
-      });
+    </section>
 
-      // Responsive mobile nav
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileNav = document.getElementById('mobile-nav');
-      if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', () => {
-          if (mobileNav.classList.contains('scale-0')) {
-            mobileNav.classList.remove('scale-0','opacity-0','pointer-events-none');
-            mobileNav.classList.add('scale-100','opacity-100');
-          } else {
-            mobileNav.classList.add('scale-0','opacity-0','pointer-events-none');
-            mobileNav.classList.remove('scale-100','opacity-100');
-          }
-        });
-        document.querySelectorAll('#mobile-nav a').forEach(link =>
-          link.addEventListener('click', () => menuBtn.click())
-        );
-      }
-    </script>
   </main>
+
+  <!-- SwiperJS and Mobile menu script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper for hero section
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination' },
+      autoplay: { delay: 3500, disableOnInteraction: false },
+    });
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        if(mobileNav.classList.contains('scale-0')) {
+          mobileNav.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.add('scale-100', 'opacity-100');
+        } else {
+          mobileNav.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+          mobileNav.classList.remove('scale-100', 'opacity-100');
+        }
+      });
+      document.querySelectorAll('#mobile-nav a').forEach(link =>
+        link.addEventListener('click', () => menuBtn.click())
+      );
+    }
+  </script>
 
   <!-- Footer -->
   <footer class="bg-blue-600 text-white text-center py-4">
@@ -211,5 +235,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>
