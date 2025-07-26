@@ -15,27 +15,35 @@
       .mobile-menu { display: block; }
       .desktop-menu { display: none; }
     }
-    /* Timeline */
-    .timeline:before { 
-      content:""; 
+    /* Timeline improvements */
+    .timeline:before {
+      content:"";
       position: absolute;
-      left: 50%; 
-      top: 0; 
-      bottom: 0; 
-      width: 3px; 
-      background: #2563eb; 
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #2563eb;
       z-index: 0;
       transform: translateX(-50%);
     }
-    .timeline-item { position:relative; z-index:1;}
     .timeline-dot {
-      width: 2.2rem; height: 2.2rem;
-      background: linear-gradient(135deg,#2563eb,#38bdf8); 
-      border-radius: 9999px; 
-      display: flex; align-items: center; justify-content: center; 
-      color: #fff; font-weight: bold; font-size: 1.1rem; 
-      border: 3px solid #fff; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      border-radius: 9999px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: 3px solid #fff;
       box-shadow: 0 1px 10px 0 rgba(37,99,235,0.10);
+      text-align: center;
+      line-height: 1;
       margin: 0 auto;
     }
     .counter-anim { animation: countUp 1.1s cubic-bezier(.4,0,.2,1);}
@@ -90,22 +98,22 @@
         <!-- Timeline Items -->
         <div class="timeline-item flex items-center mb-8">
           <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg">Founded as a local security agency</span></div>
-          <div class="timeline-dot mx-auto">1985</div>
+          <div class="timeline-dot">1985</div>
           <div class="w-1/2 pl-6 sm:hidden text-base font-medium">Founded as a local security agency</div>
         </div>
         <div class="timeline-item flex items-center mb-8">
           <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg">Expanded to industrial & event protection</span></div>
-          <div class="timeline-dot mx-auto">1995</div>
+          <div class="timeline-dot">1995</div>
           <div class="w-1/2 pl-6 sm:hidden text-base font-medium">Expanded to industrial & event protection</div>
         </div>
         <div class="timeline-item flex items-center mb-8">
           <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg">Launched city-wide night patrolling</span></div>
-          <div class="timeline-dot mx-auto">2005</div>
+          <div class="timeline-dot">2005</div>
           <div class="w-1/2 pl-6 sm:hidden text-base font-medium">Launched city-wide night patrolling</div>
         </div>
         <div class="timeline-item flex items-center">
           <div class="w-1/2 pr-6 text-right hidden sm:block"><span class="text-lg font-bold text-blue-700">Now: 300+ clients & 200+ trained professionals</span></div>
-          <div class="timeline-dot mx-auto">2025</div>
+          <div class="timeline-dot">2025</div>
           <div class="w-1/2 pl-6 sm:hidden text-base font-bold text-blue-700">Now: 300+ clients & 200+ pros</div>
         </div>
       </div>
