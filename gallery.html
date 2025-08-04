@@ -46,11 +46,11 @@
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <a href="index.html" class="flex items-center space-x-3">
-  <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
-  <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
-    ADO SECURITY &<br class="block sm:hidden" /> PROTECTION SERVICES
-  </span>
-</a>
+        <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
+        <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
+          ADO SECURITY &<br class="block sm:hidden" /> PROTECTION SERVICES
+        </span>
+      </a>
       <!-- Desktop Nav -->
       <nav class="desktop-menu">
         <ul class="flex space-x-6 text-base md:text-lg">
@@ -80,26 +80,30 @@
 
   <main class="flex-grow max-w-5xl mx-auto px-4 py-12">
     <!-- Gallery Slider -->
-<section class="mb-12">
-  <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">Our Work in Action</h2>
-  <div class="swiper gallerySwiper rounded-xl overflow-hidden shadow-md mb-8 max-w-2xl mx-auto">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="images/img1.jpeg" alt="Watchman on Duty" class="w-full h-64 sm:h-80 object-cover object-top" />
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">Our Work in Action</h2>
+      <div class="swiper gallerySwiper rounded-xl overflow-hidden shadow-md mb-8 bg-white mx-auto max-w-full md:max-w-2xl transition-height duration-300 ease-in-out" style="height:auto;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
+            <img src="images/gallery_img1.jpg" alt="Watchman on Duty"
+                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
+            <img src="images/gallery_img2.jpg" alt="Event Security Team"
+                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
+            <img src="images/gallery_img3.jpg" alt="Night Patrolling"
+                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
+            <img src="images/Gallery_img.jpg" alt="Group Security"
+                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-slide">
-        <img src="images/img3.jpeg" alt="Event Security Team" class="w-full h-64 sm:h-80 object-cover object-top" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/img7.jpeg" alt="Night Patrolling" class="w-full h-64 sm:h-80 object-cover object-top" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/img5.jpeg" alt="Group Security" class="w-full h-64 sm:h-80 object-cover object-top" />
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+    </section>
 
     <!-- Client Logos -->
     <section class="mb-16 text-center">
@@ -107,8 +111,7 @@
       <div class="flex flex-wrap justify-center gap-x-10 gap-y-6">
         <img src="images/Nilkamal_Logo.svg" alt="Client 1 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
         <img src="images/prima-logonew.png" alt="Client 2 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
-        <img src="images/ADO_Logo.png" alt="Client 3 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
-        <!-- Add more client logos... -->
+        <img src="images/avcon_logo.png" alt="Client 3 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
       </div>
     </section>
 
@@ -150,20 +153,42 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Gallery swiper
-    new Swiper('.gallerySwiper', {
+    // Gallery swiper with dynamic container height adjustment
+    const gallerySwiper = new Swiper('.gallerySwiper', {
       loop: true,
       pagination: { el: '.gallerySwiper .swiper-pagination', clickable: true },
-      autoplay: { delay: 3500, disableOnInteraction: false }
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      on: {
+        init() { adjustContainerHeight(this); },
+        slideChange() { adjustContainerHeight(this); },
+        resize() { adjustContainerHeight(this); },
+      }
     });
-    // Testimonial swiper
+
+    function adjustContainerHeight(swiper) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      const img = activeSlide.querySelector('img');
+      const container = document.querySelector('.gallerySwiper');
+      if (img && img.complete) {
+        container.style.height = img.naturalHeight + 'px';
+      } else if (img) {
+        img.onload = () => {
+          container.style.height = img.naturalHeight + 'px';
+        };
+      } else {
+        container.style.height = 'auto';
+      }
+    }
+
+    // Testimonials swiper
     new Swiper('.testimonialSwiper', {
       slidesPerView: 1,
       loop: true,
       autoplay: { delay: 4200, disableOnInteraction: false },
       pagination: { el: '.testimonialSwiper .swiper-pagination', clickable: true }
     });
-    // Mobile nav script
+
+    // Mobile nav toggle button
     const menuBtn = document.getElementById('menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
     if (menuBtn && mobileNav) {
