@@ -2,215 +2,203 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery & Clients - ADO Security & Protection Services</title>
-  <link rel="icon" href="images/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Material+Icons&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery & Clients | ADO Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Icons+Outlined&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { dark: '#0f172a', primary: '#1d4ed8', accent: '#38bdf8' }
+          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
   <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .mobile-menu { display: none; }
-    @media (max-width: 767px) {
-      .mobile-menu { display: block; }
-      .desktop-menu { display: none; }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
-    .testimonial-card { 
-      background: #eff6ff; 
-      border-radius: 1rem; 
-      box-shadow: 0 2px 20px rgba(37, 99, 235, 0.07);
-      padding: 2rem 1.5rem; 
-      font-style: italic; 
+    /* Masonry Layout Logic */
+    .masonry-wrapper {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 640px) { .masonry-wrapper { column-count: 2; } }
+    @media (min-width: 1024px) { .masonry-wrapper { column-count: 3; } }
+
+    .masonry-item {
+      display: inline-block;
+      width: 100%;
       margin-bottom: 1.5rem;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
-    .testimonial-avatar { 
-      width: 56px; 
-      height: 56px; 
-      background: #2563eb; 
-      color: #fff; 
-      border-radius: 9999px; 
-      font-size: 1.5rem; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      font-weight: 700; 
-      margin: 0 auto 1rem; 
+    .masonry-item:hover { transform: translateY(-5px); }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      height: auto;
     }
-    .swiper-pagination-bullet { background: #2563eb; opacity: 0.6; }
-    .swiper-pagination-bullet-active { opacity: 1; }
+    #mobile-menu-overlay.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-  <!-- Navbar -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="index.html" class="flex items-center space-x-3">
-        <img src="images/ADO_Logo.png" alt="ADO Security & Protection Services Logo" class="h-10 w-10 object-contain" />
-        <span class="text-lg sm:text-xl md:text-3xl font-bold text-blue-700 leading-tight">
-          ADO SECURITY &<br class="block sm:hidden" /> PROTECTION SERVICES
-        </span>
+  <header class="glass-nav shadow-sm sticky top-0 z-50 border-b border-slate-200/50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="bg-transparent p-1 rounded-lg">
+            <img src="images/ADO_Logo.png" alt="ADO Logo" class="h-10 w-10 object-contain" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-brand-dark leading-none uppercase">ADO Security</span>
+          <span class="text-[10px] font-bold tracking-[0.2em] text-brand-primary uppercase">Protection Services</span>
+        </div>
       </a>
-      <!-- Desktop Nav -->
-      <nav class="desktop-menu">
-        <ul class="flex space-x-6 text-base md:text-lg">
-          <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
-          <li><a href="about.html" class="hover:text-blue-700">About</a></li>
-          <li><a href="gallery.html" class="text-blue-700 border-b-2 border-blue-700 pb-1 font-semibold">Gallery & Clients</a></li>
-          <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
-          <li><a href="documents/brochure.pdf" target="_blank" rel="noopener" class="hover:text-blue-700">E-brochure</a></li>
+      <nav class="hidden md:block">
+        <ul class="flex items-center space-x-8 text-sm font-semibold text-slate-600">
+          <li><a href="index.html" class="hover:text-brand-primary transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-brand-primary transition">About</a></li>
+          <li><a href="gallery.html" class="text-brand-primary">Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-brand-primary transition">Contact</a></li>
+          <li><a href="documents/brochure.pdf" target="_blank" class="bg-brand-dark text-white px-5 py-2 rounded-full hover:bg-brand-primary transition">E-brochure</a></li>
         </ul>
       </nav>
-      <!-- Mobile Hamburger -->
-      <button id="menu-btn" class="mobile-menu relative z-50 block md:hidden focus:outline-none" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
-        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <!-- Mobile Nav -->
-      <nav id="mobile-nav" class="mobile-menu absolute right-4 top-20 bg-white shadow-lg rounded-lg w-44 py-2 transition-all duration-200 ease-in-out scale-0 opacity-0 pointer-events-none">
-        <ul class="flex flex-col space-y-1 text-base">
-          <li><a href="index.html" class="block px-4 py-2 hover:text-blue-700">Home</a></li>
-          <li><a href="about.html" class="block px-4 py-2 hover:text-blue-700">About</a></li>
-          <li><a href="gallery.html" class="block px-4 py-2 text-blue-700 font-semibold">Gallery & Clients</a></li>
-          <li><a href="contact.html" class="block px-4 py-2 hover:text-blue-700">Contact</a></li>
-          <li><a href="documents/brochure.pdf" target="_blank" rel="noopener" class="block px-4 py-2 hover:text-blue-700">E-brochure</a></li>
-        </ul>
-      </nav>
+      <button id="menu-open" class="md:hidden p-2 text-slate-900"><span class="material-icons-outlined">menu</span></button>
     </div>
   </header>
 
-  <main class="flex-grow max-w-5xl mx-auto px-4 py-12">
-    <!-- Gallery Slider -->
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">Our Work in Action</h2>
-      <div class="swiper gallerySwiper rounded-xl overflow-hidden shadow-md mb-8 bg-white mx-auto max-w-full md:max-w-2xl transition-height duration-300 ease-in-out" style="height:auto;">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
-            <img src="images/gallery_img1.jpg" alt="Watchman on Duty"
-                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-brand-dark z-[60] text-white opacity-0 pointer-events-none transition-all duration-300 transform translate-x-full flex flex-col p-8">
+    <div class="flex justify-end"><button id="menu-close" class="p-2"><span class="material-icons-outlined text-4xl">close</span></button></div>
+    <ul class="flex flex-col gap-8 mt-12 text-3xl font-bold">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html" class="text-brand-accent">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+<main class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl font-extrabold text-brand-dark mb-4 tracking-tight">Deployment <span class="text-brand-primary">Gallery</span></h1>
+        <p class="text-slate-500">Visual evidence of our professional security standards across Mumbai.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="group bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-slate-200">
+            <img src="images/gallery_img3.jpg" alt="Duty Guard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
-            <img src="images/gallery_img2.jpg" alt="Event Security Team"
-                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
-          </div>
-          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
-            <img src="images/gallery_img3.jpg" alt="Night Patrolling"
-                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
-          </div>
-          <div class="swiper-slide flex items-center justify-center bg-gray-100 p-4">
-            <img src="images/Gallery_img.jpg" alt="Group Security"
-                 class="object-contain max-w-full max-h-[80vh] w-auto h-auto rounded" />
+          <div class="p-6 text-center">
+            <p class="text-sm font-bold text-brand-dark uppercase tracking-widest">On-Site Vigilance</p>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
 
-    <!-- Client Logos -->
-    <section class="mb-16 text-center">
-      <h2 class="text-2xl font-bold text-blue-700 mb-7">Our Trusted Clients</h2>
-      <div class="flex flex-wrap justify-center gap-x-10 gap-y-6">
-        <img src="images/Nilkamal_Logo.svg" alt="Client 1 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
-        <img src="images/prima-logonew.png" alt="Client 2 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
-        <img src="images/avcon_logo.png" alt="Client 3 Logo" class="h-14 grayscale hover:grayscale-0 transition duration-300 bg-white p-2 rounded shadow" />
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="max-w-2xl mx-auto">
-      <h2 class="text-2xl font-bold text-blue-700 mb-8 text-center">What Clients Say</h2>
-      <div class="swiper testimonialSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide testimonial-card">
-            <div class="testimonial-avatar">S</div>
-            <p>“We hired ADO for our society and couldn't be happier with their professionalism and quick response.”</p>
-            <cite class="block mt-4 font-semibold text-blue-800">– Mr. Sharma</cite>
+        <div class="group bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-slate-200">
+            <img src="images/img3.jpeg" alt="Event Security" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <div class="swiper-slide testimonial-card">
-            <div class="testimonial-avatar">P</div>
-            <p>“Top-notch event security. The bouncers were well-managed and calm throughout."</p>
-            <cite class="block mt-4 font-semibold text-blue-800">– Priya Mehta</cite>
-          </div>
-          <div class="swiper-slide testimonial-card">
-            <div class="testimonial-avatar">R</div>
-            <p>“Reliable, swift to respond. I highly recommend ADO for corporate security requirements.”</p>
-            <cite class="block mt-4 font-semibold text-blue-800">– Rajesh Desai</cite>
+          <div class="p-6 text-center">
+            <p class="text-sm font-bold text-brand-dark uppercase tracking-widest">Trained Guards</p>
           </div>
         </div>
-        <div class="swiper-pagination mt-6"></div>
+
+        <div class="group bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-slate-200">
+            <img src="images/gallery_img1.jpg" alt="Night Patrol" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="p-6 text-center">
+            <p class="text-sm font-bold text-brand-dark uppercase tracking-widest">24/7 Monitoring</p>
+          </div>
+        </div>
+
+        <div class="group bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-slate-200">
+            <img src="images/Gallery_img2.jpg" alt="Team Formation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="p-6 text-center">
+            <p class="text-sm font-bold text-brand-dark uppercase tracking-widest">Safety Training</p>
+          </div>
+        </div>
+
+        <div class="group bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-slate-200">
+            <img src="images/security_img.jpg" alt="Industrial Guarding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="p-6 text-center">
+            <p class="text-sm font-bold text-brand-dark uppercase tracking-widest">Residential Security</p>
+          </div>
+        </div>
+
+        <div class="group bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 transition-all hover:shadow-2xl">
+          <div class="aspect-square overflow-hidden bg-slate-200">
+            <img src="images/gallery_img.jpg" alt="Corporate Security" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="p-6 text-center">
+            <p class="text-sm font-bold text-brand-dark uppercase tracking-widest">Disciplined Guards</p>
+          </div>
+        </div>
+        
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-blue-700 text-white py-6 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm">
-      <div>&copy; 2025 ADO Security & Protection Services</div>
-      <div class="mt-2 md:mt-0">
-        <a href="contact.html" class="hover:underline">Contact</a>
+  <section class="pb-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="bg-brand-dark rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full -mr-32 -mt-32"></div>
+        
+        <h2 class="text-brand-accent uppercase tracking-[0.3em] text-xs font-black mb-12 relative z-10">Trusted by Industry Leaders</h2>
+        
+        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 relative z-10">
+          
+          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
+            <img src="images/Nilkamal_Logo.svg" alt="Nilkamal" 
+                 class="h-10 md:h-12 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
+          </div>
+
+          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
+            <img src="images/prima-logonew.png" alt="Prima" 
+                 class="h-8 md:h-10 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
+          </div>
+
+          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
+            <img src="images/avcon_logo.png" alt="Avcon" 
+                 class="h-8 md:h-10 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
+          </div>
+
+        </div>
+        
+        <p class="mt-12 text-slate-400 text-sm font-medium">Providing high-standard security across manufacturing, corporate, and logistics sectors.</p>
       </div>
+    </div>
+  </section>
+
+  <footer class="bg-white py-10 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+      <p>&copy; 2026 ADO Security & Protection Services Pvt.Ltd.</p>
+      <a href="contact.html" class="hover:text-brand-primary transition mt-4 md:mt-0">Contact Support</a>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Gallery swiper with dynamic container height adjustment
-    const gallerySwiper = new Swiper('.gallerySwiper', {
-      loop: true,
-      pagination: { el: '.gallerySwiper .swiper-pagination', clickable: true },
-      autoplay: { delay: 3500, disableOnInteraction: false },
-      on: {
-        init() { adjustContainerHeight(this); },
-        slideChange() { adjustContainerHeight(this); },
-        resize() { adjustContainerHeight(this); },
-      }
-    });
-
-    function adjustContainerHeight(swiper) {
-      const activeSlide = swiper.slides[swiper.activeIndex];
-      const img = activeSlide.querySelector('img');
-      const container = document.querySelector('.gallerySwiper');
-      if (img && img.complete) {
-        container.style.height = img.naturalHeight + 'px';
-      } else if (img) {
-        img.onload = () => {
-          container.style.height = img.naturalHeight + 'px';
-        };
-      } else {
-        container.style.height = 'auto';
-      }
-    }
-
-    // Testimonials swiper
-    new Swiper('.testimonialSwiper', {
-      slidesPerView: 1,
-      loop: true,
-      autoplay: { delay: 4200, disableOnInteraction: false },
-      pagination: { el: '.testimonialSwiper .swiper-pagination', clickable: true }
-    });
-
-    // Mobile nav toggle button
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    if (menuBtn && mobileNav) {
-      menuBtn.addEventListener('click', () => {
-        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        menuBtn.setAttribute('aria-expanded', !expanded);
-        mobileNav.classList.toggle('scale-0');
-        mobileNav.classList.toggle('opacity-0');
-        mobileNav.classList.toggle('pointer-events-none');
-        mobileNav.classList.toggle('scale-100');
-        mobileNav.classList.toggle('opacity-100');
-      });
-      document.querySelectorAll('#mobile-nav a').forEach(link =>
-        link.addEventListener('click', () => {
-          menuBtn.setAttribute('aria-expanded', false);
-          mobileNav.classList.add('scale-0','opacity-0','pointer-events-none');
-          mobileNav.classList.remove('scale-100','opacity-100');
-        })
-      );
-    }
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    menuOpen.onclick = () => menuOverlay.classList.add('active');
+    menuClose.onclick = () => menuOverlay.classList.remove('active');
   </script>
 </body>
 </html>
