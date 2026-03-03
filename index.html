@@ -110,43 +110,72 @@
     </ul>
   </div>
   <main>
-<section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-[#0f172a] text-white">
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0f172a] text-white">
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/70 to-[#0f172a]/90 z-10"></div>
-    
-    <img src="images/Home_Page.png" alt="ADO Security Guards" class="w-full h-full object-cover opacity-100 scale-105" />
+    <img src="images/Home_Page.png" alt="ADO Security Guards" class="w-full h-full object-cover opacity-50 scale-105" />
   </div>
 
-  <div class="relative z-20 text-center px-6 max-w-4xl">
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0f172a] text-white">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/70 to-[#0f172a]/90 z-10"></div>
+    <img src="images/Home_Page.png" alt="ADO Security Guards" class="w-full h-full object-cover opacity-50 scale-105" />
+  </div>
+
+  <div class="relative z-20 text-center px-6 max-w-5xl">
     <div class="mb-8 flex justify-center">
         <span class="px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-500 text-[10px] font-bold uppercase tracking-[0.3em]">
             Established 1985
         </span>
     </div>
 
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1]">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1]">
       YOUR SAFETY, <br/>
-      <span class="text-[#1d4ed8]">OUR PRIORITY.</span>
+      <span class="text-brand-primary">OUR PRIORITY.</span>
     </h1>
     
-    <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-      A premier provider of manpower-led security solutions, we maintain a dominant presence across Mumbai, Navi Mumbai, Thane, Pune, and the Union Territories of Daman, Diu, and Dadra & Nagar Haveli. Serving clients nationwide, we safeguard your most valuable assets through disciplined guarding and unwavering physical vigilance.
-    </p>
+    <div class="max-w-2xl mx-auto mb-10">
+      <p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed">
+        Trusted security experts protecting residential, commercial, and event spaces across Mumbai and beyond. 
+        With disciplined guards and 24/7 vigilance, we safeguard what matters most to you.
+      </p>
+    </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="contact.html" class="bg-[#1d4ed8] hover:bg-blue-700 px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
-        Get a Free Quote
-        <span class="material-icons-outlined text-sm">arrow_forward</span>
-      </a>
-      <a href="#services" class="bg-white/5 hover:bg-white/10 backdrop-blur-sm px-10 py-4 rounded-xl font-bold transition border border-white/10">
-        Explore Services
-      </a>
+    <div class="mb-12 py-3 border-y border-white/10 inline-block px-8">
+       <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-slate-300 uppercase">
+        Mumbai <span class="mx-2 text-brand-primary">|</span> Navi Mumbai <span class="mx-2 text-brand-primary">|</span> Thane <span class="mx-2 text-brand-primary">|</span> Pune <span class="mx-2 text-brand-primary">|</span> Daman <span class="mx-2 text-brand-primary">|</span> Diu <span class="mx-2 text-brand-primary">|</span> Dadra & Nagar Haveli
+       </p>
+    </div>
+
+    <div class="flex flex-col items-center gap-10">
+      <div class="flex justify-center gap-12">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-black text-white"><span id="count-guards">0</span>+</div>
+          <div class="text-brand-accent text-[10px] font-bold uppercase tracking-widest mt-1">Guards Deployed</div>
+        </div>
+        <div class="text-center border-l border-white/10 pl-12">
+          <div class="text-3xl md:text-4xl font-black text-white"><span id="count-sites">0</span>+</div>
+          <div class="text-brand-accent text-[10px] font-bold uppercase tracking-widest mt-1">Sites Protected</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="bg-brand-primary hover:bg-blue-700 px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg">
+          Get a Free Quote
+          <span class="material-icons-outlined text-sm">arrow_forward</span>
+        </a>
+        <a href="#services" class="bg-white/5 hover:bg-white/10 backdrop-blur-sm px-10 py-4 rounded-xl font-bold transition border border-white/10">
+          Explore Services
+        </a>
+      </div>
     </div>
   </div>
-
-  <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-50 to-transparent z-20"></div>
 </section>
 
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-50 to-transparent z-20"></div>
+</section>
+  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-50 to-transparent z-20"></div>
+</section>
 <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
   <div class="flex justify-between items-end mb-12">
     <div>
@@ -254,5 +283,34 @@
     menuOpen.onclick = () => menuOverlay.classList.add('active');
     menuClose.onclick = () => menuOverlay.classList.remove('active');
   </script>
+
+  <script>
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  const observerOptions = { threshold: 0.5 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Targets: element, start, end, duration (ms)
+        animateValue(document.getElementById("count-guards"), 0, 500, 2000);
+        animateValue(document.getElementById("count-sites"), 0, 120, 2000);
+        observer.unobserve(entry.target); // Runs only once
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(document.getElementById("count-guards"));
+</script>
 </body>
 </html>
