@@ -50,7 +50,24 @@
       height: auto;
     }
     #mobile-menu-overlay.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
-    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+    /* This ensures logos stay visible on dark backgrounds before hover */
+    .logo-glow {
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+    .group-hover-logo:hover .logo-glow {
+      filter: brightness(1);
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
@@ -175,35 +192,51 @@
     <div class="bg-brand-dark rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
       <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full -mr-32 -mt-32"></div>
       
-      <h2 class="text-brand-accent uppercase tracking-[0.3em] text-xs font-black mb-12 relative z-10">Trusted by Industry Leaders</h2>
+      <h2 class="text-brand-accent uppercase tracking-[0.3em] text-[10px] md:text-xs font-black mb-12 relative z-10">Trusted by Industry Leaders</h2>
       
       <div class="relative overflow-hidden w-full z-10">
-        <div class="animate-marquee flex items-center gap-12 md:gap-24">
+        <div class="animate-marquee flex items-center gap-8 md:gap-16">
           
-          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
-            <img src="images/Nilkamal_Logo.svg" alt="Nilkamal" class="h-10 md:h-12 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
+          <div class="flex items-center gap-8 md:gap-16">
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/Nilkamal_Logo.svg" alt="Nilkamal" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/prima-logonew.png" alt="Prima" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/avcon_logo.png" alt="Avcon" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/Right Industries.png" alt="Right Industries" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/Pacific Cyber.png" alt="Pacific Cyber" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
           </div>
 
-          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
-            <img src="images/prima-logonew.png" alt="Prima" class="h-8 md:h-10 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
+          <div class="flex items-center gap-8 md:gap-16">
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/Nilkamal_Logo.svg" alt="Nilkamal" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/prima-logonew.png" alt="Prima" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/avcon_logo.png" alt="Avcon" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/Right Industries.png" alt="Right Industries" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
+            <div class="bg-white/5 p-4 rounded-2xl flex items-center justify-center min-w-[120px]">
+              <img src="images/Pacific Cyber.png" alt="Pacific Cyber" class="h-8 md:h-10 object-contain logo-glow" />
+            </div>
           </div>
-
-          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
-            <img src="images/avcon_logo.png" alt="Avcon" class="h-8 md:h-10 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
-          </div>
-
-          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
-            <img src="images/Right Industries.png" alt="Client 4" class="h-8 md:h-10 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
-          </div>
-
-          <div class="group/logo bg-white/5 p-4 rounded-2xl hover:bg-white transition-all duration-300">
-            <img src="images/Pacific Cyber.png" alt="Client 5" class="h-8 md:h-10 object-contain brightness-0 invert group-hover/logo:brightness-100 group-hover/logo:invert-0 transition-all duration-300" />
-          </div>
-
+          
         </div>
       </div>
       
-      <p class="mt-12 text-slate-400 text-sm font-medium">Providing high-standard security across manufacturing, corporate, and logistics sectors.</p>
+      <p class="mt-12 text-slate-400 text-sm font-medium relative z-10">Providing high-standard security across manufacturing, corporate, and logistics sectors.</p>
     </div>
   </div>
 </section>
@@ -225,7 +258,6 @@
 </body>
 
 </html>
-
 
 
 
