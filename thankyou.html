@@ -1,28 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Thank You</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | ADO Security & Protection Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0f172a', 
+              primary: '#1d4ed8', 
+              accent: '#38bdf8'  
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .whatsapp-float img {
+      width: 35px;
+    }
+  </style>
 </head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-<body class="bg-slate-50 flex items-center justify-center h-screen">
+<header class="glass-nav shadow-sm sticky top-0 z-50 border-b border-slate-200/50">
+  <div class="max-w-full mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="bg-transparent p-1 rounded-lg transition-transform group-hover:scale-105">
+        <img src="images/ADO_Logo.png" alt="ADO Logo" class="h-12 w-12 object-contain" />
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xl font-extrabold tracking-tight text-brand-dark leading-none uppercase">
+          ADO Security & Protection Services Pvt. Ltd.
+        </span>
+        <span class="text-[10px] font-bold tracking-[0.2em] text-brand-primary uppercase">
+          Since 1985
+        </span>
+      </div>
+    </a>
 
-<div class="bg-white shadow-xl rounded-3xl p-10 text-center max-w-md">
+    <nav class="hidden md:block">
+      <ul class="flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <li><a href="index.html" class="hover:text-brand-primary transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-brand-primary transition">About</a></li>
+        <li><a href="gallery.html" class="hover:text-brand-primary transition">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-brand-primary transition">Contact</a></li>
+        <li>
+          <a href="documents/brochure.pdf" target="_blank" rel="noopener" class="bg-brand-dark text-white px-5 py-2.5 rounded-full hover:bg-brand-primary transition shadow-md flex items-center gap-2">
+            <span class="material-icons-outlined text-sm">picture_as_pdf</span>
+            E-brochure
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<h1 class="text-3xl font-bold text-blue-700 mb-4">
-Thank You!
-</h1>
+<main class="flex items-center justify-center min-h-[85vh] py-12 px-6">
+  <div class="text-center max-w-2xl">
+    <div class="mb-8">
+      <span class="inline-block w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center">
+        <span class="material-icons-outlined text-5xl text-green-500">check_circle</span>
+      </span>
+    </div>
+    
+    <h1 class="text-5xl md:text-6xl font-extrabold text-brand-dark mb-6 tracking-tight">
+      Thank You!
+    </h1>
+    
+    <p class="text-xl text-slate-600 mb-4 leading-relaxed">
+      Your security inquiry has been received successfully.
+    </p>
+    
+    <p class="text-lg text-slate-500 mb-10">
+      Our team will review your requirements and contact you shortly to discuss your security needs.
+    </p>
 
-<p class="text-gray-600 mb-6">
-Your request has been received.  
-Our security team will contact you shortly.
-</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html" class="bg-brand-primary hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg">
+        Back to Home
+        <span class="material-icons-outlined text-sm">arrow_forward</span>
+      </a>
+      <a href="contact.html" class="bg-white hover:bg-slate-50 text-brand-primary px-10 py-4 rounded-xl font-bold transition border border-brand-primary shadow-lg flex items-center justify-center gap-2">
+        Return to Contact
+        <span class="material-icons-outlined text-sm">help</span>
+      </a>
+    </div>
+  </div>
+</main>
 
-<a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl">
-Back to Home
+<footer class="bg-brand-dark text-white py-10 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+    <p>&copy; 2026 ADO Security & Protection Services Pvt.Ltd.</p>
+    <div class="flex gap-8 mt-4 md:mt-0">
+      <a href="contact.html" class="hover:text-white transition">Contact</a>
+      <a href="about.html" class="hover:text-white transition">About</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/9870094544" class="whatsapp-float" target="_blank" rel="noopener">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
 </a>
-
-</div>
 
 </body>
 </html>
