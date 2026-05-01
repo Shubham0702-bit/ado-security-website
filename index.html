@@ -355,12 +355,12 @@
     window.requestAnimationFrame(step);
   }
 
-  const observerOptions = { threshold: 0.5 };
+  const observerOptions = { threshold: 0.3 };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // Targets: element, start, end, duration (ms)
-        animateValue(document.getElementById("count-guards"), 0, 500, 2000);
+        animateValue(document.getElementById("count-guards"), 0, 700, 2000);
         animateValue(document.getElementById("count-sites"), 0, 120, 2000);
         observer.unobserve(entry.target); // Runs only once
       }
